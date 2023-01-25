@@ -55,7 +55,7 @@ public class ShoppingList {
     public void addProduct() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Zadejte název produktu");
-        String name = scanner.next();
+        String name = scanner.nextLine();
         System.out.println("Zadejte cenu");
         BigDecimal price = scanner.nextBigDecimal();
         LocalDate purchaseDate = LocalDate.now();

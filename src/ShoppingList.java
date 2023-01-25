@@ -70,10 +70,14 @@ public class ShoppingList {
         switch (scanner.nextInt()) {
             case 1:
                 System.out.println("Zadej název produktu");
-                String productName = scanner.next();
-                int removeIndex = shoppingList.indexOf(productName)+1;
-                shoppingList.remove(removeIndex);
-                System.out.println("produkt " + productName + " byl odebrán");
+                int i = 1;
+                for (Product product : shoppingList) {
+                    System.out.println("pro smazání produktu: " + product.getName() + " stistněte " + i);
+                    i++;
+                }
+                int removeIndex = scanner.nextInt();
+                System.out.println("product " + shoppingList.get(removeIndex - 1) + "byl smazán");
+                shoppingList.remove(removeIndex - 1);
                 break;
             case 2:
                 System.out.println("Zadej index produktu");
